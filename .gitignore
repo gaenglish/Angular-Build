@@ -1,6 +1,5 @@
 # Dependency Directories
 node_modules
-bower_components
 
 # OS Files
 .DS_Store
