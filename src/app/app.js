@@ -13,7 +13,7 @@
                 .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
                 .icon("phone"      , "./assets/svg/phone.svg"       , 512);
             $mdThemingProvider.theme('default')
-                .primaryPalette('brown')
+                .primaryPalette('cyan')
                 .accentPalette('red');
         });
 
