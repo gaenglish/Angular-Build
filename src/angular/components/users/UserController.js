@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    
+
     angular.module('app.users', [ 'ngMaterial' ])
        .controller('UserController', [
           'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
@@ -59,7 +59,7 @@
 
         $mdBottomSheet.show({
           controllerAs  : 'vm',
-          templateUrl   : '../src/users/view/contactSheet.htm',
+          templateUrl   : '../../views/contactSheet.htm',
           controller    : [ '$mdBottomSheet', ContactSheetController],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
