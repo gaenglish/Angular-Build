@@ -14,6 +14,7 @@ var clean = require('del'),
 
 var dist = {
     root: './dist/',
+    views: './dist/assets/views/',
     js: './dist/assets/js/',
     css: './dist/assets/css/',
     images: './dist/assets/images/',
@@ -22,11 +23,14 @@ var dist = {
 };
 
 var files = {
-    html: [
-        './src/html/**/*.htm'
+    index: [
+        './src/index.htm'
+    ],
+    views: [
+        './src/app/**/*.htm'
     ],
     js: [
-        './src/angular/**/*.js'
+        './src/app/**/*.js'
     ],
     css: [
         './node_modules/angular-material/angular-material.min.css',
@@ -124,8 +128,11 @@ gulp.task('sass', function() {
 
 // Copy static files for local builds to the dist directory
 gulp.task('copy', function() {
-    gulp.src(files.html)
+    gulp.src(files.index)
         .pipe(gulp.dest(dist.root));
+
+    gulp.src(files.views)
+        .pipe(gulp.dest(dist.views));
 
     gulp.src(files.libs)
         .pipe(gulp.dest(dist.js));

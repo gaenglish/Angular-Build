@@ -16,7 +16,6 @@ Installation is easy.  Run ```npm install``` to download all the dependencies ne
 $ npm install
 ```
 
-
 ## Build
 After running the build, everything you need to deploy to your web server will be located in the ```dist``` folder.
 
@@ -30,3 +29,16 @@ This template comes with it's own server for running the site locally for develo
 ```
 $ gulp watch
 ```
+
+## Directory Layout
+
+```
+src/                    --> source files for the application
+  app/                  --> Angular files.  JavaScipt files in this directory will get compiled.
+    components/        	--> app specific modules
+  assets/               --> static files (e.g. images, svg)
+  sass/                 --> Sass files. Sass files get compiled.
+  index.html            --> app layout file (the main html template file of the app)
+```
+
+Visit [scotch.io](https://scotch.io/tutorials/angularjs-best-practices-directory-structure) to read about the Angular directory structure used in this template.
