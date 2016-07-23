@@ -1,7 +1,6 @@
 (function(){
     'use strict';
-
-    // Prepare the 'users' module for subsequent registration of controllers and delegates
+    
     angular.module('app.users', [ 'ngMaterial' ])
        .controller('UserController', [
           'userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',
@@ -10,12 +9,13 @@
 
   /**
    * Main Controller for the Angular Material Starter App
-   * @param $scope
+   * @param userService
    * @param $mdSidenav
-   * @param avatarsService
+   * @param $mdBottomSheet
+   * @param $log
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $timeout, $log ) {
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $log ) {
     var self = this;
 
     self.selected     = null;
@@ -46,7 +46,7 @@
 
     /**
      * Select the current avatars
-     * @param menuId
+     * @param user
      */
     function selectUser ( user ) {
       self.selected = angular.isNumber(user) ? $scope.users[user] : user;
@@ -58,7 +58,7 @@
     function makeContact(selectedUser) {
 
         $mdBottomSheet.show({
-          controllerAs  : "vm",
+          controllerAs  : 'vm',
           templateUrl   : '../src/users/view/contactSheet.htm',
           controller    : [ '$mdBottomSheet', ContactSheetController],
           parent        : angular.element(document.getElementById('content'))
