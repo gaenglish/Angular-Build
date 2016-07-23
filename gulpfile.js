@@ -1,5 +1,6 @@
 var clean = require('del'),
     gulp = require('gulp'),
+    ngAnnotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
@@ -88,6 +89,7 @@ gulp.task('minify', function() {
     gulp.src(files.js)
         .pipe(sourcemaps.init())
         .pipe(concat('app.min.js'))
+        .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(dist.js));
